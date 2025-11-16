@@ -61,7 +61,7 @@ namespace CasoAG.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string textoBuscado = tbJerarquia.Text;
+            string textoBuscado = tbBuscar.Text;
 
             if(string.IsNullOrEmpty(textoBuscado))
             {
@@ -71,19 +71,11 @@ namespace CasoAG.Formularios
 
             TreeNode nodoEncontrado = BuscarNodo(tvArbol.Nodes, textoBuscado);
 
-            
+
             if (nodoEncontrado != null)
             {
-               
-                MessageBox.Show("¡Nodo encontrado!");
-                tvArbol.SelectedNode = nodoEncontrado; 
-                nodoEncontrado.Expand(); 
-                tvArbol.Focus(); 
-            }
-            else
-            {
-               
-                MessageBox.Show("No se encontró el nodo.");
+
+                MessageBox.Show($"{nodoEncontrado} fue encontrado!");
             }
         }
 
@@ -105,6 +97,52 @@ namespace CasoAG.Formularios
 
             }
             return null;
+        }
+
+        public void RecorridoPreOrden(TreeNodeCollection coleccion, List<string> nodos)
+        {
+
+            foreach (TreeNode nodoRaiz in coleccion)
+            {
+                nodos.Add(nodoRaiz.Text);
+                RecorridoPreOrden(nodoRaiz.Nodes, nodos);
+            }
+
+        }
+
+        public void RecorridoPostOrden(TreeNodeCollection coleccion, List<string> nodos)
+        {
+            foreach(TreeNode nodoRaiz in coleccion)
+            {
+                RecorridoPostOrden(nodoRaiz.Nodes, nodos);
+                nodos.Add(nodoRaiz.Text);
+            }
+        }
+
+        private void btnRecorrido_Click(object sender, EventArgs e)
+        {
+            lbPreOrden.Items.Clear();
+            List<string> noditos = new List<string>();
+            RecorridoPreOrden(tvArbol.Nodes, noditos);
+            foreach (string p in noditos)
+            {
+                lbPreOrden.Items.Add($"- {p}");
+            }
+
+
+           
+        }
+
+        private void btnPostOrden_Click(object sender, EventArgs e)
+        {
+            lbPostOrden.Items.Clear();
+            List<string> nodos = new List<string>();
+
+            RecorridoPostOrden(tvArbol.Nodes, nodos);
+            foreach(string p in nodos)
+            {
+                lbPostOrden.Items.Add($"- {p}");
+            }
         }
     }
     

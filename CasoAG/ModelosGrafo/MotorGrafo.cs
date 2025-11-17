@@ -172,5 +172,34 @@ namespace CasoAG.ModelosGrafo
             }
             return visitados.Count == miGrafo.Count;
         }
+
+        public int ObtenerDistanciaTotalRuta(List<string> ruta)
+        {
+            
+            if (ruta == null || ruta.Count < 2)
+            {
+                return 0;
+            }
+
+            int distanciaTotal = 0;
+
+            for (int i = 0; i < ruta.Count - 1; i++)
+            {
+                string nodoActual = ruta[i];
+                string nodoSiguiente = ruta[i + 1];
+
+                if (miGrafo.ContainsKey(nodoActual) && miGrafo[nodoActual].ContainsKey(nodoSiguiente))
+                {
+                    distanciaTotal += miGrafo[nodoActual][nodoSiguiente];
+                }
+                else
+                {
+                  
+                    return 0;
+                }
+            }
+
+            return distanciaTotal;
+        }
     }
 }

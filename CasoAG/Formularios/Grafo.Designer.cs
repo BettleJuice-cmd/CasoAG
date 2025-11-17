@@ -39,6 +39,11 @@
             this.tbDistancia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConexidad = new System.Windows.Forms.Button();
+            this.lblConexidad = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRutaCorta = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInsertar
@@ -135,12 +140,51 @@
             this.btnConexidad.TabIndex = 10;
             this.btnConexidad.Text = "VALIDAR CONEXIDAD";
             this.btnConexidad.UseVisualStyleBackColor = true;
+            this.btnConexidad.Click += new System.EventHandler(this.btnConexidad_Click);
+            // 
+            // lblConexidad
+            // 
+            this.lblConexidad.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblConexidad.Location = new System.Drawing.Point(188, 378);
+            this.lblConexidad.Name = "lblConexidad";
+            this.lblConexidad.Size = new System.Drawing.Size(139, 42);
+            this.lblConexidad.TabIndex = 11;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(690, 28);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // btnRutaCorta
+            // 
+            this.btnRutaCorta.Location = new System.Drawing.Point(401, 258);
+            this.btnRutaCorta.Name = "btnRutaCorta";
+            this.btnRutaCorta.Size = new System.Drawing.Size(197, 23);
+            this.btnRutaCorta.TabIndex = 13;
+            this.btnRutaCorta.Text = "ENCONTRAR RUTA";
+            this.btnRutaCorta.UseVisualStyleBackColor = true;
+            this.btnRutaCorta.Click += new System.EventHandler(this.btnRutaCorta_Click);
             // 
             // Grafo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(690, 450);
+            this.Controls.Add(this.btnRutaCorta);
+            this.Controls.Add(this.lblConexidad);
             this.Controls.Add(this.btnConexidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbDistancia);
@@ -152,10 +196,14 @@
             this.Controls.Add(this.tbEdificio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInsertar);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Grafo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grafo";
             this.Load += new System.EventHandler(this.Grafo_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +222,9 @@
         private System.Windows.Forms.TextBox tbDistancia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConexidad;
+        private System.Windows.Forms.Label lblConexidad;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button btnRutaCorta;
     }
 }

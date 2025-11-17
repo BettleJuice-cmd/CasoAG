@@ -44,6 +44,8 @@
             this.btnPostOrden = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.btnContar = new System.Windows.Forms.Button();
+            this.lblNodos = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.cmsArbol.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +108,7 @@
             // 
             this.tvArbol.Location = new System.Drawing.Point(12, 139);
             this.tvArbol.Name = "tvArbol";
-            this.tvArbol.Size = new System.Drawing.Size(459, 281);
+            this.tvArbol.Size = new System.Drawing.Size(459, 244);
             this.tvArbol.TabIndex = 6;
             this.tvArbol.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvArbol_NodeMouseClick);
             // 
@@ -129,23 +131,23 @@
             // 
             this.lbPreOrden.FormattingEnabled = true;
             this.lbPreOrden.ItemHeight = 16;
-            this.lbPreOrden.Location = new System.Drawing.Point(507, 139);
+            this.lbPreOrden.Location = new System.Drawing.Point(522, 139);
             this.lbPreOrden.Name = "lbPreOrden";
-            this.lbPreOrden.Size = new System.Drawing.Size(117, 180);
+            this.lbPreOrden.Size = new System.Drawing.Size(117, 244);
             this.lbPreOrden.TabIndex = 8;
             // 
             // lbPostOrden
             // 
             this.lbPostOrden.FormattingEnabled = true;
             this.lbPostOrden.ItemHeight = 16;
-            this.lbPostOrden.Location = new System.Drawing.Point(656, 139);
+            this.lbPostOrden.Location = new System.Drawing.Point(645, 139);
             this.lbPostOrden.Name = "lbPostOrden";
-            this.lbPostOrden.Size = new System.Drawing.Size(114, 180);
+            this.lbPostOrden.Size = new System.Drawing.Size(114, 244);
             this.lbPostOrden.TabIndex = 9;
             // 
             // btnPreOrden
             // 
-            this.btnPreOrden.Location = new System.Drawing.Point(510, 345);
+            this.btnPreOrden.Location = new System.Drawing.Point(522, 91);
             this.btnPreOrden.Name = "btnPreOrden";
             this.btnPreOrden.Size = new System.Drawing.Size(114, 28);
             this.btnPreOrden.TabIndex = 10;
@@ -155,7 +157,7 @@
             // 
             // btnPostOrden
             // 
-            this.btnPostOrden.Location = new System.Drawing.Point(656, 346);
+            this.btnPostOrden.Location = new System.Drawing.Point(645, 91);
             this.btnPostOrden.Name = "btnPostOrden";
             this.btnPostOrden.Size = new System.Drawing.Size(114, 27);
             this.btnPostOrden.TabIndex = 11;
@@ -179,11 +181,32 @@
             this.tbBuscar.Size = new System.Drawing.Size(178, 22);
             this.tbBuscar.TabIndex = 13;
             // 
+            // btnContar
+            // 
+            this.btnContar.Location = new System.Drawing.Point(12, 398);
+            this.btnContar.Name = "btnContar";
+            this.btnContar.Size = new System.Drawing.Size(158, 27);
+            this.btnContar.TabIndex = 14;
+            this.btnContar.Text = "CONTAR NODOS";
+            this.btnContar.UseVisualStyleBackColor = true;
+            this.btnContar.Click += new System.EventHandler(this.btnContar_Click);
+            // 
+            // lblNodos
+            // 
+            this.lblNodos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNodos.Location = new System.Drawing.Point(176, 398);
+            this.lblNodos.Name = "lblNodos";
+            this.lblNodos.Size = new System.Drawing.Size(295, 27);
+            this.lblNodos.TabIndex = 15;
+            this.lblNodos.Text = "CANTIDAD DE NODOS TOTALES:";
+            // 
             // Arbol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 477);
+            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.Controls.Add(this.lblNodos);
+            this.Controls.Add(this.btnContar);
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPostOrden);
@@ -225,5 +248,7 @@
         private System.Windows.Forms.Button btnPostOrden;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbBuscar;
+        private System.Windows.Forms.Button btnContar;
+        private System.Windows.Forms.Label lblNodos;
     }
 }

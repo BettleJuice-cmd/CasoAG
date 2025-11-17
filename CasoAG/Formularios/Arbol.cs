@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CasoAG.ModelosArbol;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,53 +70,18 @@ namespace CasoAG.Formularios
                 return;
             }
 
-            TreeNode nodoEncontrado = BuscarNodo(tvArbol.Nodes, textoBuscado);
+            TreeNode nodoEncontrado = FuncionesArbol.BuscarNodo(tvArbol.Nodes, textoBuscado);
 
 
             if (nodoEncontrado != null)
             {
 
-                MessageBox.Show($"{nodoEncontrado} fue encontrado!");
-            }
-        }
-
-        private TreeNode BuscarNodo(TreeNodeCollection coleccion, string texto)
-        {
-            foreach (TreeNode nodo in coleccion)
-            {
-                if (nodo.Text.ToLower().Contains(texto.ToLower()))
-                {
-                    return nodo;
-                }
-
-                TreeNode nodoHijo = BuscarNodo(nodo.Nodes, texto);
-
-                if(nodoHijo != null)
-                {
-                    return nodoHijo;
-                }
-
-            }
-            return null;
-        }
-
-        public void RecorridoPreOrden(TreeNodeCollection coleccion, List<string> nodos)
-        {
-
-            foreach (TreeNode nodoRaiz in coleccion)
-            {
-                nodos.Add(nodoRaiz.Text);
-                RecorridoPreOrden(nodoRaiz.Nodes, nodos);
+                MessageBox.Show("El nodo fue encontrado!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
             }
 
-        }
-
-        public void RecorridoPostOrden(TreeNodeCollection coleccion, List<string> nodos)
-        {
-            foreach(TreeNode nodoRaiz in coleccion)
+            else
             {
-                RecorridoPostOrden(nodoRaiz.Nodes, nodos);
-                nodos.Add(nodoRaiz.Text);
+                MessageBox.Show("EL NODO NO FUE ENCONTRADO", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -123,7 +89,7 @@ namespace CasoAG.Formularios
         {
             lbPreOrden.Items.Clear();
             List<string> noditos = new List<string>();
-            RecorridoPreOrden(tvArbol.Nodes, noditos);
+            FuncionesArbol.RecorridoPreOrden(tvArbol.Nodes, noditos);
             foreach (string p in noditos)
             {
                 lbPreOrden.Items.Add($"- {p}");
@@ -138,11 +104,20 @@ namespace CasoAG.Formularios
             lbPostOrden.Items.Clear();
             List<string> nodos = new List<string>();
 
-            RecorridoPostOrden(tvArbol.Nodes, nodos);
+            FuncionesArbol.RecorridoPostOrden(tvArbol.Nodes, nodos);
             foreach(string p in nodos)
             {
                 lbPostOrden.Items.Add($"- {p}");
             }
+        }
+
+        private void btnContar_Click(object sender, EventArgs e)
+        {
+            lblNodos.Text = "CANTIDAD DE NODOS TOTALES: ";
+            int totalNodos = FuncionesArbol.ContarNodos(tvArbol.Nodes);
+
+            lblNodos.Text += (totalNodos);
+
         }
     }
     

@@ -16,5 +16,10 @@ namespace CasoAG.Formularios
         {
             InitializeComponent();
         }
+
+        private void Grafo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.Name = "Grafo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grafo";
+            this.Load += new System.EventHandler(this.Grafo_Load);
             this.ResumeLayout(false);
 
         }

@@ -99,7 +99,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(361, 91);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(110, 27);
-            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -109,7 +109,7 @@
             this.tvArbol.Location = new System.Drawing.Point(12, 139);
             this.tvArbol.Name = "tvArbol";
             this.tvArbol.Size = new System.Drawing.Size(459, 244);
-            this.tvArbol.TabIndex = 6;
+            this.tvArbol.TabIndex = 7;
             this.tvArbol.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvArbol_NodeMouseClick);
             // 
             // cmsArbol
@@ -134,7 +134,7 @@
             this.lbPreOrden.Location = new System.Drawing.Point(522, 139);
             this.lbPreOrden.Name = "lbPreOrden";
             this.lbPreOrden.Size = new System.Drawing.Size(117, 244);
-            this.lbPreOrden.TabIndex = 8;
+            this.lbPreOrden.TabIndex = 12;
             // 
             // lbPostOrden
             // 
@@ -143,7 +143,7 @@
             this.lbPostOrden.Location = new System.Drawing.Point(645, 139);
             this.lbPostOrden.Name = "lbPostOrden";
             this.lbPostOrden.Size = new System.Drawing.Size(114, 244);
-            this.lbPostOrden.TabIndex = 9;
+            this.lbPostOrden.TabIndex = 13;
             // 
             // btnPreOrden
             // 
@@ -171,7 +171,7 @@
             this.label2.Location = new System.Drawing.Point(16, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 16);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 4;
             this.label2.Text = "BUSCAR JERARQUÍA:";
             // 
             // tbBuscar
@@ -179,14 +179,14 @@
             this.tbBuscar.Location = new System.Drawing.Point(176, 96);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(178, 22);
-            this.tbBuscar.TabIndex = 13;
+            this.tbBuscar.TabIndex = 5;
             // 
             // btnContar
             // 
             this.btnContar.Location = new System.Drawing.Point(12, 398);
             this.btnContar.Name = "btnContar";
             this.btnContar.Size = new System.Drawing.Size(158, 27);
-            this.btnContar.TabIndex = 14;
+            this.btnContar.TabIndex = 8;
             this.btnContar.Text = "CONTAR NODOS";
             this.btnContar.UseVisualStyleBackColor = true;
             this.btnContar.Click += new System.EventHandler(this.btnContar_Click);
@@ -197,7 +197,7 @@
             this.lblNodos.Location = new System.Drawing.Point(176, 398);
             this.lblNodos.Name = "lblNodos";
             this.lblNodos.Size = new System.Drawing.Size(295, 27);
-            this.lblNodos.TabIndex = 15;
+            this.lblNodos.TabIndex = 9;
             this.lblNodos.Text = "CANTIDAD DE NODOS TOTALES:";
             // 
             // Arbol

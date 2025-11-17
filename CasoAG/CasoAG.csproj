@@ -74,6 +74,7 @@
       <DependentUpon>Grafo.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelosArbol\FuncionesArbol.cs" />
+    <Compile Include="ModelosGrafo\Grafo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CasoAG.ModelosGrafo
 {
-    public class Grafo
+    public class MotorGrafo
     {
-        private Dictionary<string, Dictionary<string, int>> miGrafo;
+        public Dictionary<string, Dictionary<string, int>> miGrafo;
 
-       public Grafo()
+       public MotorGrafo()
         {
             miGrafo = new Dictionary<string, Dictionary<string, int>>();
         }
@@ -128,5 +128,49 @@ namespace CasoAG.ModelosGrafo
 
         }
 
+
+        public List<string> ObtenerTodosLosNodos()
+        {
+            return new List<string>(miGrafo.Keys);
+        }
+
+        public bool EsConexo()
+        {
+            
+            if (miGrafo.Count <= 1)
+            {
+                return true;
+            }
+
+            
+            string nodoInicial = miGrafo.Keys.First(); 
+
+           
+            var visitados = new HashSet<string>();
+            var cola = new Queue<string>();
+
+            cola.Enqueue(nodoInicial);
+            visitados.Add(nodoInicial);
+
+           
+            while (cola.Count > 0)
+            {
+                string actual = cola.Dequeue();
+
+              
+                if (miGrafo.ContainsKey(actual))
+                {
+                    foreach (var vecino in miGrafo[actual].Keys)
+                    {
+                        if (!visitados.Contains(vecino))
+                        {
+                            visitados.Add(vecino);
+                            cola.Enqueue(vecino);
+                        }
+                    }
+                }
+            }
+            return visitados.Count == miGrafo.Count;
+        }
     }
 }

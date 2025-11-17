@@ -119,6 +119,11 @@ namespace CasoAG.Formularios
             lblNodos.Text += (totalNodos);
 
         }
+
+        private void Arbol_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
